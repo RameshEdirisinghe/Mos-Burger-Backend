@@ -16,7 +16,7 @@ public class ItemEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String itemName;
-    private String Des;
+    private String des;
     private String imgUrl;
     private Double price;
     private Integer qty;
