@@ -6,6 +6,7 @@ import edu.icet.ecom.repository.UserDao;
 import edu.icet.ecom.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,8 +14,10 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
-    final UserDao userDao;
-    final ModelMapper modelMapper;
+    @Autowired
+    UserDao userDao;
+    @Autowired
+    ModelMapper modelMapper;
 
     @Override
     public boolean isValid(Login login) {

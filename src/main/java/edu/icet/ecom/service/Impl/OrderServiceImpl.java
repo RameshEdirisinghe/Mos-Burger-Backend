@@ -6,16 +6,18 @@ import edu.icet.ecom.repository.OrderDao;
 import edu.icet.ecom.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
-    final OrderDao orderDao;
-    final ModelMapper modelMapper;
+    @Autowired
+    OrderDao orderDao;
+    @Autowired
+    ModelMapper modelMapper;
 
     @Override
     public void placeOrder(Order order) {

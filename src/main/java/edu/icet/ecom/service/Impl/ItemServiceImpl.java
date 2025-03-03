@@ -6,17 +6,20 @@ import edu.icet.ecom.repository.ItemDao;
 import edu.icet.ecom.service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
+
 public class ItemServiceImpl implements ItemService {
 
-    final ModelMapper modelMapper;
-    final ItemDao itemDao;
+    @Autowired
+    ModelMapper modelMapper;
+    @Autowired
+    ItemDao itemDao;
 
     @Override
     public void addItem(Item item) {

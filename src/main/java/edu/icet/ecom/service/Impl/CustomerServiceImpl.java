@@ -6,6 +6,7 @@ import edu.icet.ecom.repository.CustomerDao;
 import edu.icet.ecom.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CustomerServiceImpl implements CustomerService {
 
-    final ModelMapper modelMapper;
+    ModelMapper modelMapper = new ModelMapper();
     final CustomerDao customerDao;
 
     @Override

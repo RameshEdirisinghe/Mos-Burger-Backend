@@ -1,7 +1,6 @@
 package edu.icet.ecom.controller;
 
 import edu.icet.ecom.dto.Customer;
-import edu.icet.ecom.dto.Item;
 import edu.icet.ecom.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -38,7 +37,7 @@ public class CustomerController {
         customerService.update(customer);
     }
 
-    @GetMapping("/search-id")
+    @GetMapping("/search-id/{id}")
     public ResponseEntity<Customer> findbyId(@PathVariable Integer id){
         return  ResponseEntity.ok( customerService.findById(id));
     }
