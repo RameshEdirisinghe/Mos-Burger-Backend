@@ -1,21 +1,21 @@
 package edu.icet.ecom.controller;
 
 import edu.icet.ecom.dto.Login;
-import edu.icet.ecom.service.LoginService;
+import edu.icet.ecom.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/login")
+@RequestMapping("/user")
 @RequiredArgsConstructor
-public class LoginController {
+public class UserController {
 
-    final LoginService loginService;
+    final UserService userService;
 
-    @GetMapping("/signin")
+    @GetMapping("/login")
     public ResponseEntity<Boolean> login(@RequestBody Login login){
-        return ResponseEntity.ok(loginService.isValid(login));
+        return ResponseEntity.ok(userService.isValid(login));
     }
 }
